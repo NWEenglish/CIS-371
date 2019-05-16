@@ -1,0 +1,11 @@
+.topper { vertical-align: top; }
+
+tr:not(:first-child) td { border-top: 2px solid red; }
+
+table   {
+    border-spacing: 0; 
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+tr td:first-child { font-weight: bold; }
