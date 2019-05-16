@@ -1,0 +1,149 @@
+html {
+    font: Times;
+    font-size: medium;
+    color: black;
+}
+
+
+#container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto;
+}
+
+#intro {
+    border: solid;
+    background-color: aquamarine; 
+}
+
+#intro img {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.sec1 {
+    border:solid;
+    background-color: greenyellow;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.sec2 {
+    border:solid;
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.sec2 img {
+    align-self: center;
+}
+
+.sec3 {
+    border:solid;
+    background-color: palevioletred;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.sec4 {
+    border:solid;
+    background-color: thistle;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#courseTable tr:nth-child(even) {
+    background-color: grey;
+}
+
+#courseTable tr:nth-child(odd) {
+    background-color: blueviolet;
+}
+
+#courseTable th:first-child {
+    align-self: center;
+}
+
+#courseTable th:last-child {
+    align-self: center;
+}
+
+.sec5 {
+    border:solid;
+    background-color: antiquewhite;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.sec6 {
+    border:solid;
+    background-color: honeydew;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.sec6 .best {
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    #container .sec1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    
+    #container .sec2 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    
+    #container .sec3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    
+    #container .sec4 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+    
+    #container .sec5 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+    
+    #container .sec6 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+
+}
