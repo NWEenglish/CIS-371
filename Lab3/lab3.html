@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab3</title>
+    <h2>Nicholas English</h2>
+</head>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+    
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBHqAIx0QWXleZ6hckqh-ckONciPsxBP4I",
+        authDomain: "lab3-132a3.firebaseapp.com",
+        databaseURL: "https://lab3-132a3.firebaseio.com",
+        projectId: "lab3-132a3",
+        storageBucket: "lab3-132a3.appspot.com",
+        messagingSenderId: "312542506192",
+        appId: "1:312542506192:web:e93f73e9c62c6c4d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+    <table id="countries">
+        <tr>
+            <th>Country</th>
+            <th>Code</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Region</th>
+        </tr>
+    </table>
+
+<script src="countries.js"></script>
+</body>
+</html>
