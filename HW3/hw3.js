@@ -2,15 +2,13 @@ const el = document.getElementById('numSlider');
 el.addEventListener('change', sliderListener);
 
 function sliderListener(ev) {
-    alert('Slider value is ' + ev.target.value);
+    console.log('Slider value is ' + ev.target.value);
     const ulParent = document.getElementById("itemList");
     const len = Number(ev.target.value);
+    const link = "https://randomuser.me/api?results=" + len;
 
     const elOut = document.getElementById('userCount');
     elOut.innerText = ev.target.value;
-
-    const elSeedOut = document.getElementById('randSeed');
-    elSeedOut.innerText = 12345678;
 
     // Removes items from the list.
     const items = document.querySelectorAll('#itemList > li');
@@ -26,26 +24,36 @@ function sliderListener(ev) {
         ulParent.appendChild(liChild);
     }
 
-    fetch('https://randomuser.me/api?results=3')
-        .then(convertRequestToJson)
-        .then(showData);
-}
+    fetch(link)
+        .then(r => r.json())
+        .then(d => {
+            console.log('Got some data', d);
+            const tbParent = document.getElementById("randUser");
 
-function convertRequestToJson(r) {
-    return r.json();
-}
+            // Remove previous items from list.
+            for (let k = document.getElementById("randUser").rows.length - 1; k > 0; k--) {
+                document.getElementById("randUser").deleteRow(k);
+            }
 
-function showData(d) {
-    console.log('Got some data', d);
+            // Adds items to the table.
+            for (let k = 0; k < d.info.results; k++) {
 
-    let k = 0;
+                // Creates a new row.
+                const tbRow = tbParent.insertRow(k+1);
+                const cell1 = tbRow.insertCell(0);
+                const cell2 = tbRow.insertCell(1);
+                const cell3 = tbRow.insertCell(2);
+                const cell4 = tbRow.insertCell(3);
+                const cell5 = tbRow.insertCell(4);
+                const cell6 = tbRow.insertCell(5);
 
-    for (let k = 0; k < d.info.results; k++) {
-        const ulParent = document.getElementById("randUser");
-        const liChild = document.createElement('li');
-        const liText = document.createTextNode('Item#' + k + " " + 
-            d.results[k].name.first + " " + d.results[k].name.last);
-        liChild.appendChild(liText);
-        ulParent.appendChild(liChild);
-    }
+                // Populates each cell.
+                cell1.innerHTML = d.results[k].name.first + " " + d.results[k].name.last;
+                cell2.innerHTML = d.results[k].email;
+                cell3.innerHTML = d.results[k].login.username;
+                cell4.innerHTML = d.results[k].phone;
+                cell5.innerHTML = d.results[k].dob.date.split('T')[0];
+                cell6.innerHTML = "<img src=" + d.results[k].picture.thumbnail + "></img>";
+            }
+        });
 }

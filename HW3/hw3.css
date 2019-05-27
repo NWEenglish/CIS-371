@@ -1,0 +1,58 @@
+body {
+    background-color: burlywood;
+}
+
+#itemList {
+    display: none;
+}
+
+#randUser tr:nth-child(odd) {
+    background-color: grey;
+}
+
+#randUser tr:nth-child(even) {
+    background-color: plum;
+}
+
+@media (max-width: 500px) {
+
+    table#randUser th:nth-child(2) {
+        display: none;
+    }
+
+    table#randUser th:nth-child(3) {
+        display: none;
+    }
+
+    table#randUser th:nth-child(4) {
+        display: none;
+    }
+
+    table#randUser th:nth-child(5) {
+        display: none;
+    }
+
+    table#randUser th:nth-child(6) {
+        display: none;
+    }
+
+    table#randUser td:nth-child(2) {
+        display: none;
+    }
+
+    table#randUser td:nth-child(3) {
+        display: none;
+    }
+
+    table#randUser td:nth-child(4) {
+        display: none;
+    }
+
+    table#randUser td:nth-child(5) {
+        display: none;
+    }
+
+    table#randUser td:nth-child(6) {
+        display: none;
+    }
+}
